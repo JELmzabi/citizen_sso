@@ -7,9 +7,12 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('home');
 
-Route::get('dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/settings.php';
-require __DIR__.'/auth.php';
+
+### User Routes
+require __DIR__.'/user/settings.php';
+require __DIR__.'/user/auth.php';
+require __DIR__.'/user/user_web.php';
+
+
+### Admin Routes
